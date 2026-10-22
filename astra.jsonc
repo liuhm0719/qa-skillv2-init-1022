@@ -1,0 +1,25 @@
+{
+  "apiVersion": "astra/v1",
+  "kind": "Application",
+  "metadata": {
+    "name": "qa-d065-init-1022"
+  },
+  "spec": {
+    "components": {
+      "app": {
+        "type": "service",
+        "source": ".",
+        "runtime": {
+          "kind": "oci",
+          "dockerfile": "Dockerfile"
+        },
+        "health": {
+          "http": {
+            "path": "/health",
+            "port": 8080
+          }
+        }
+      }
+    }
+  }
+}
